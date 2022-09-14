@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/olymp/static/css/main.3d4fc3d0.css",
+    "main.js": "/olymp/static/js/main.3afffa36.js",
+    "index.html": "/olymp/index.html",
+    "static/media/close.svg": "/olymp/static/media/close.2ceb783afbab75916ddc.svg",
+    "main.3d4fc3d0.css.map": "/olymp/static/css/main.3d4fc3d0.css.map",
+    "main.3afffa36.js.map": "/olymp/static/js/main.3afffa36.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3d4fc3d0.css",
+    "static/js/main.3afffa36.js"
+  ]
+}
