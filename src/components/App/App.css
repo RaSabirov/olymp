@@ -1,0 +1,17 @@
+.wrapper {
+	background-color: #fff;
+	border-radius: 10px;
+	height: 100%;
+	margin: 50px auto;
+	max-width: 1400px;
+	width: calc(100vw - 100px);
+}
+
+.container {
+	margin: 0 auto;
+	width: 90%;
+}
+
+.content {
+	padding: 20px 0;
+}

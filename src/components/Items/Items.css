@@ -1,0 +1,29 @@
+.items__title {
+	font-size: 38px;
+	font-weight: 800;
+	margin-top: 30px;
+	margin-bottom: 50px;
+}
+
+.items__container {
+	display: grid;
+	grid-column-gap: 20px;
+	grid-template-columns: repeat(3, 1fr);
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	border-bottom: 1px solid #f6f6f6;
+}
+
+.items__spisok {
+	flex: 1;
+	font-size: 14px;
+	font-weight: 600;
+	padding: 8px;
+}
+
+.items__spisok_active {
+	background: #fff;
+	border-radius: 5px;
+	box-shadow: 0 2px 4px rgb(0 0 0 / 4%);
+}

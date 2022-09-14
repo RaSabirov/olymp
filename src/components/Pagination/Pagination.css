@@ -1,0 +1,32 @@
+.paginate {
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.paginate li {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.paginate a {
+	width: 40px;
+	height: 40px;
+	padding: 10px;
+	border: 1px solid rgba(73, 181, 66);
+	border-radius: 30px;
+	margin-right: 5px;
+	cursor: pointer;
+	color: rgba(73, 181, 66);
+}
+
+.paginate a:hover {
+	background-color: rgba(147, 213, 142);
+	color: #fff;
+}
+
+.selected a {
+	color: #fff;
+	background-color: rgba(147, 213, 142);
+}

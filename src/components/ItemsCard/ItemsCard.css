@@ -1,0 +1,51 @@
+.items__card-title {
+	font-size: 17px;
+	font-weight: 500;
+	margin-bottom: 10px;
+	height: 40px;
+}
+
+.items__card-subtitle {
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 40px;
+}
+
+.items__block {
+	text-align: center;
+	background-color: #f3f3f3;
+	padding: 10px;
+	border-radius: 10px;
+	margin-bottom: 30px;
+}
+
+.items__selector {
+	display: flex;
+	flex-direction: column;
+	padding: 6px;
+	background-color: #f3f3f3;
+	border-radius: 10px;
+}
+
+.items__selector ul {
+	display: flex;
+	margin-bottom: 5px;
+}
+
+.items__spisok-po {
+	margin-top: 5px;
+	color: rgba(58, 138, 53);
+	cursor: pointer;
+	align-self: center;
+	max-width: 200px;
+	border-bottom: 1px solid rgba(58, 138, 53);
+	font-weight: bold;
+}
+
+.items__block img {
+	border-radius: 20px;
+	margin-bottom: 10px;
+	object-fit: cover;
+	height: 282px;
+	width: 100%;
+}

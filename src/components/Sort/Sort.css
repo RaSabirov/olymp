@@ -1,0 +1,33 @@
+.active {
+	background-color: rgba(58, 138, 53);
+	color: #fff;
+	border: 1px solid;
+	border-radius: 5px;
+	font-weight: bold;
+}
+
+.categories__sort-popup {
+	background: #fff;
+	border: 2px solid rgba(246, 250, 245);
+	border-radius: 10px;
+	box-shadow: 0 5px 15pxrgba (0, 0, 0, 0.09);
+	margin-top: 15px;
+	padding: 10px 0;
+	position: absolute;
+	right: 0;
+}
+
+.categories__sort-popup ul li {
+	cursor: pointer;
+	padding: 12px 20px;
+}
+
+.categories__sort-popup li {
+	overflow: hidden;
+}
+
+.categories__sort-popup li:hover {
+	background: rgba(58, 138, 53);
+	color: #fff;
+	border-radius: 5px;
+}
