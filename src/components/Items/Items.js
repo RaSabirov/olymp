@@ -11,7 +11,11 @@ export const Items = ({ onProgramsClick, searchValue, onClose }) => {
 	const [cards, setCards] = React.useState([]);
 	const [isLoading, setIsLoading] = React.useState(true);
 	const [categoryId, setCategoryId] = React.useState(0);
+
 	const [currentPage, setCurrentPage] = React.useState(1);
+	const [countCards, setCountCards] = React.useState(0);
+	const [itemsPerPage] = React.useState(3);
+
 	const [sortType, setSortType] = React.useState({
 		name: 'популярности',
 		sortProperty: 'rating',
@@ -25,18 +29,23 @@ export const Items = ({ onProgramsClick, searchValue, onClose }) => {
 		const category = categoryId > 0 ? `category=${categoryId}` : '';
 		const search = searchValue ? `search=${searchValue}` : '';
 		fetch(
-			`https://632072f39f82827dcf2d014f.mockapi.io/api/v1/items?page=${currentPage}&limit=3&${category}&sortBy=${sortBy}&order=${order}${search}`
+			`https://632072f39f82827dcf2d014f.mockapi.io/api/v1/items?page=${currentPage}&limit=3${category}&sortBy=${sortBy}&order=${order}${search}`
 		)
 			.then((res) => {
 				return res.json();
 			})
 			.then((arr) => {
-				setCards(arr);
+				setCards(arr.items);
+				setCountCards(arr.count);
 				setIsLoading(false);
 			})
 			.catch((e) => console.log('Ошибка загрузки данных', e));
 		window.scrollTo(0, 0);
 	}, [categoryId, sortType, currentPage, searchValue]);
+
+	const handlePageClick = (event) => {
+		setCurrentPage(event.selected + 1);
+	};
 
 	function handleClickCategory(i) {
 		setCategoryId(i);
@@ -58,7 +67,12 @@ export const Items = ({ onProgramsClick, searchValue, onClose }) => {
 							.filter((obj) => obj.title.toLowerCase().includes(searchValue.toLowerCase()))
 							.map((card) => <ItemsCard card={card} key={card.id} onProgramsClick={onProgramsClick} />)}
 			</div>
-			<Pagination onChangePage={(number) => setCurrentPage(number)} />
+			<Pagination
+				currentPage={currentPage}
+				onPageChange={handlePageClick}
+				itemsPerPage={itemsPerPage}
+				countCards={countCards}
+			/>
 		</div>
 	);
 };

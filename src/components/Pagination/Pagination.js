@@ -2,16 +2,16 @@ import React from 'react';
 import ReactPaginate from 'react-paginate';
 import './Pagination.css';
 
-export const Pagination = ({ onChangePage }) => {
+export const Pagination = ({ onPageChange, countCards, itemsPerPage }) => {
 	return (
 		<ReactPaginate
 			className='paginate'
 			breakLabel='...'
 			nextLabel='>'
 			previousLabel='<'
-			onPageChange={(event) => onChangePage(event.selected + 1)}
+			onPageChange={onPageChange}
 			pageRangeDisplayed={3}
-			pageCount={4}
+			pageCount={Math.ceil(countCards / itemsPerPage)}
 			renderOnZeroPageCount={null}
 		/>
 	);
