@@ -29,7 +29,7 @@ export const Items = ({ onProgramsClick, searchValue, onClose }) => {
 		const category = categoryId > 0 ? `category=${categoryId}` : '';
 		const search = searchValue ? `search=${searchValue}` : '';
 		fetch(
-			`https://632072f39f82827dcf2d014f.mockapi.io/api/v1/items?page=${currentPage}&limit=3${category}&sortBy=${sortBy}&order=${order}${search}`
+			`https://632072f39f82827dcf2d014f.mockapi.io/api/v1/items?page=${currentPage}&limit=3&${category}&sortBy=${sortBy}&order=${order}${search}`
 		)
 			.then((res) => {
 				return res.json();
