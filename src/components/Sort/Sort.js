@@ -3,7 +3,8 @@ import './Sort.css';
 
 export const Sort = ({ value, onChangeSort }) => {
 	const [isOpen, setIsOpen] = React.useState(false);
-	// const list = ['популярности', '2022', '2021'];
+	const sortRef = React.useRef();
+
 	const list = [
 		{ name: 'популярности', sortProperty: 'rating' },
 		{ name: '2022', sortProperty: 'currentyear' },
@@ -15,8 +16,25 @@ export const Sort = ({ value, onChangeSort }) => {
 		setIsOpen(false);
 	}
 
+	// Скрытие попапа с сортировкой при клике вне формы попапа
+	React.useEffect(() => {
+		// Mount
+		const handleClickOutside = (event) => {
+			if (!event.path.includes(sortRef.current)) {
+				setIsOpen(false);
+			}
+		};
+
+		document.body.addEventListener('click', handleClickOutside);
+
+		//Unmount
+		return () => {
+			document.body.removeEventListener('click', handleClickOutside);
+		};
+	}, []);
+
 	return (
-		<div className='categories__sort'>
+		<div ref={sortRef} className='categories__sort'>
 			<div className='categories__sort-label'>
 				<svg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'>
 					<path

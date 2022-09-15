@@ -64,6 +64,10 @@
 	margin-bottom: 30px;
 }
 
+.popup__about-po {
+	margin-bottom: 10px;
+}
+
 .popup__programs-info {
 	display: flex;
 	max-height: 500px;
