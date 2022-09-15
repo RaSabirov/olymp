@@ -16,8 +16,8 @@ export const Popup = ({ onClose, isOpen, card }) => {
 					{card.title}:
 					<br /> '{card.name}'
 				</h2>
+				<p className='popup__about-po'>Список программ:</p>
 				<ul className='popup__programs-info'>
-					<p className='popup__about-po'>Список программ:</p>
 					{card.programs === undefined
 						? ''
 						: card.programs.map((item, index) => (
