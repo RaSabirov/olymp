@@ -18,7 +18,7 @@ export const Header = ({ searchValue, setSearchValue }) => {
 					<div className='header__subtitle'>для проведения мероприятий</div>
 				</div>
 			</div>
-			<Search searchValue={searchValue} setSearchValue={setSearchValue} />
+			{/* <Search searchValue={searchValue} setSearchValue={setSearchValue} /> */}
 		</div>
 	);
 };
