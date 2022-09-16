@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/olymp/static/css/main.02a938b1.css",
-    "main.js": "/olymp/static/js/main.ec9941f4.js",
+    "main.js": "/olymp/static/js/main.a946e802.js",
     "index.html": "/olymp/index.html",
     "static/media/close.svg": "/olymp/static/media/close.2ceb783afbab75916ddc.svg",
     "main.02a938b1.css.map": "/olymp/static/css/main.02a938b1.css.map",
-    "main.ec9941f4.js.map": "/olymp/static/js/main.ec9941f4.js.map"
+    "main.a946e802.js.map": "/olymp/static/js/main.a946e802.js.map"
   },
   "entrypoints": [
     "static/css/main.02a938b1.css",
-    "static/js/main.ec9941f4.js"
+    "static/js/main.a946e802.js"
   ]
 }
