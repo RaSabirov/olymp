@@ -2,7 +2,8 @@ import React from 'react';
 import './Categories.css';
 
 export const Categories = ({ value, onClickCategory }) => {
-	const categories = ['Все', 'Олимпиада', 'Отборы', 'Смена', 'Стандартные образы', 'Прочие'];
+	const categories = ['Все', 'Олимпиада', 'Отборы', 'Смена', 'Стандартные образы', 'Тестирование', 'Прочие'];
+
 	return (
 		<div className='categories'>
 			<div className='categories__container'>

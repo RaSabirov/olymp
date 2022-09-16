@@ -1,4 +1,5 @@
 import React from 'react';
+import { useMediaQuery } from 'react-responsive';
 import { Categories } from '../Categories/Categories';
 import { ItemsCard } from '../ItemsCard/ItemsCard';
 import { Pagination } from '../Pagination/Pagination';
@@ -14,7 +15,8 @@ export const Items = ({ onProgramsClick, searchValue, onClose }) => {
 
 	const [currentPage, setCurrentPage] = React.useState(1);
 	const [countCards, setCountCards] = React.useState(0);
-	const [itemsPerPage] = React.useState(3);
+	const isTabletOrMobileQuery = useMediaQuery({ query: '(max-width: 700px)' });
+	const itemsPerPage = isTabletOrMobileQuery ? 1 : 3;
 
 	const [sortType, setSortType] = React.useState({
 		name: 'популярности',
@@ -29,7 +31,7 @@ export const Items = ({ onProgramsClick, searchValue, onClose }) => {
 		const category = categoryId > 0 ? `category=${categoryId}` : '';
 		const search = searchValue ? `search=${searchValue}` : '';
 		fetch(
-			`https://632072f39f82827dcf2d014f.mockapi.io/api/v1/items?page=${currentPage}&limit=3&${category}&sortBy=${sortBy}&order=${order}${search}`
+			`https://632072f39f82827dcf2d014f.mockapi.io/api/v1/items?page=${currentPage}&limit=${itemsPerPage}&${category}&sortBy=${sortBy}&order=${order}${search}`
 		)
 			.then((res) => {
 				return res.json();
@@ -41,7 +43,7 @@ export const Items = ({ onProgramsClick, searchValue, onClose }) => {
 			})
 			.catch((e) => console.log('Ошибка загрузки данных', e));
 		window.scrollTo(0, 0);
-	}, [categoryId, sortType, currentPage, searchValue]);
+	}, [categoryId, sortType, currentPage, searchValue, itemsPerPage]);
 
 	const handlePageClick = (event) => {
 		setCurrentPage(event.selected + 1);
@@ -62,17 +64,26 @@ export const Items = ({ onProgramsClick, searchValue, onClose }) => {
 			<h2 className='items__title'>{isLoading ? 'Загрузка карточек...' : 'Все образы'}</h2>
 			<div className='items__container'>
 				{isLoading
-					? [...new Array(3)].map((_, index) => <Sceleton key={index} />)
+					? [...new Array(isTabletOrMobileQuery ? 1 : 3)].map((_, index) => <Sceleton key={index} />)
 					: cards
 							.filter((obj) => obj.title.toLowerCase().includes(searchValue.toLowerCase()))
 							.map((card) => <ItemsCard card={card} key={card.id} onProgramsClick={onProgramsClick} />)}
 			</div>
-			<Pagination
-				currentPage={currentPage}
-				onPageChange={handlePageClick}
-				itemsPerPage={itemsPerPage}
-				countCards={countCards}
-			/>
+			<div className='paginate__container'>
+				<Pagination
+					currentPage={currentPage}
+					onPageChange={handlePageClick}
+					itemsPerPage={itemsPerPage}
+					countCards={countCards}
+				/>
+				{isTabletOrMobileQuery && (
+					<div className='paginate__pageCount'>
+						<p className='paginate__count'>
+							<span>{currentPage} </span>/ {countCards}
+						</p>
+					</div>
+				)}
+			</div>
 		</div>
 	);
 };

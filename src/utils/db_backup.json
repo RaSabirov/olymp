@@ -90,7 +90,7 @@
     },
     {
      "id": 5,
-     "title": "Олимпиада",
+     "title": "Олимпиада-Максудов",
      "os": "Windows",
      "name": "Olymp2022Win_eth_Maksudov",
      "admin": "Без админ прав",
@@ -179,10 +179,14 @@
         "admin": "С админ правами",
         "ethernet": "Доступ в интернет",
         "img": "https://img.freepik.com/free-vector/online-tutorials-concept_52683-37480.jpg",
-        "category": 5,
+        "category": 6,
         "year": 2021,
         "rating": 4,
         "programs": [
+            "Google Chrome + плагин ElectroNeek",
+            "ElectroNeek Studio Pro",
+            "ElectroNeek Bot Runner",
+            "Discord"
         ]
     },
     {
@@ -269,6 +273,37 @@
         "jdk8",
         "python2",
         "python3"
+        ]
+    },
+    {
+        "id": 11,
+        "title": "Тестирование сотрудников",
+        "os": "Windows",
+        "admin": "С админ правами",
+        "name": "employeeTesting",
+        "ethernet": "Без доступа в интернет",
+        "img": "https://img.freepik.com/free-photo/results-analysis-discovery-investigation-concept_53876-120447.jpg",
+        "category": 5,
+        "year": 2021,
+        "rating": 4,
+        "programs": [
+            "Google Chrome"
+        ]
+    },
+    {
+        "id": 12,
+        "title": "Тестирование студентов",
+        "os": "Windows",
+        "admin": "Без админ прав",
+        "name": "EnglishDivision",
+        "ethernet": "Доступ в интернет",
+        "img": "https://img.freepik.com/premium-vector/flat-design-of-development-and-operations-technology-illustration-for-websites-landing-pages-mobile-applications-posters-and-banners-trendy-flat-vector-illustration_108061-981.jpg",
+        "category": 5,
+        "year": 2021,
+        "rating": 4,
+        "programs": [
+            "Google Chrome",
+            "WorkPad"
         ]
     }
 ]

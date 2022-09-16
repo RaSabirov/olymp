@@ -42,10 +42,72 @@
 	font-weight: bold;
 }
 
+.items__spisok {
+	flex: 1;
+	font-size: 14px;
+	font-weight: 600;
+	padding: 8px;
+}
+
+.items__spisok_active {
+	background: #fff;
+	border-radius: 5px;
+	box-shadow: 0 2px 4px rgb(0 0 0 / 4%);
+}
+
 .items__block img {
 	border-radius: 20px;
 	margin-bottom: 10px;
 	object-fit: cover;
+	/* height: 282px; */
 	height: 282px;
 	width: 100%;
+}
+
+@media screen and (max-width: 1249px) {
+	.items__block img {
+		height: 250px;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.items__block {
+		max-height: 520px;
+	}
+
+	.items__block img {
+		height: 190px;
+	}
+
+	.items__card-subtitle {
+		margin-bottom: 30px;
+	}
+}
+
+@media screen and (max-width: 698px) {
+	.items__block {
+		height: auto;
+	}
+}
+
+@media screen and (max-width: 388px) {
+	.items__block {
+		max-width: 100%;
+	}
+	.items__block img {
+		height: 150px;
+	}
+	.items__card-subtitle {
+		margin-bottom: 20px;
+		font-size: 15px;
+	}
+	.items__spisok {
+		font-size: 13px;
+	}
+	.items__spisok-po {
+		font-size: 14px;
+	}
+	.items__card-title {
+		margin-bottom: 0;
+	}
 }
