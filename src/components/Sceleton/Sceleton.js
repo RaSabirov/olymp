@@ -2,15 +2,7 @@ import React from 'react';
 import ContentLoader from 'react-content-loader';
 
 const Sceleton = (props) => (
-	<ContentLoader
-		speed={2}
-		width={390}
-		height={590}
-		viewBox='0 0 390 590'
-		backgroundColor='#f3f3f3'
-		foregroundColor='#ecebeb'
-		{...props}
-	>
+	<ContentLoader speed={2} viewBox='0 0 390 590' backgroundColor='#f3f3f3' foregroundColor='#ecebeb' {...props}>
 		<rect x='0' y='348' rx='0' ry='0' width='370' height='23' />
 		<rect x='0' y='0' rx='0' ry='0' width='370' height='40' />
 		<rect x='0' y='53' rx='0' ry='0' width='370' height='282' />

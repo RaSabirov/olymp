@@ -37,13 +37,12 @@
 	background-color: rgba(147, 213, 142);
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 546px) {
 	.paginate__link {
 		display: none;
 	}
 	ul .paginate__break {
 		display: none;
-		color: red;
 	}
 	.paginate__count span {
 		font-weight: 600;

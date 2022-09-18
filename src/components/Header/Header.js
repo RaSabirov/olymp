@@ -1,4 +1,5 @@
 import React from 'react';
+import { Sort } from '../Sort/Sort';
 // import { Search } from '../Search/Search';
 import './Header.css';
 
