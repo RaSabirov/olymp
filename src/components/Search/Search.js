@@ -1,7 +1,33 @@
 import React from 'react';
+import debounce from 'lodash.debounce';
+import { SearchContext } from '../../contexts/SearchContext';
 import './Search.css';
 
-export const Search = ({ searchValue, setSearchValue }) => {
+export const Search = () => {
+	const { setSearchValue } = React.useContext(SearchContext);
+	const [value, setValue] = React.useState('');
+	const inputRef = React.useRef();
+
+	// делаем вызов отложенной функции, при поиске
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	const updateSearchValue = React.useCallback(
+		debounce((string) => {
+			setSearchValue(string);
+		}, 1000),
+		[]
+	);
+
+	function onChangeInput(evt) {
+		setValue(evt.target.value);
+		updateSearchValue(evt.target.value);
+	}
+
+	function onClickClearInput() {
+		setSearchValue('');
+		setValue('');
+		inputRef.current.focus();
+	}
+
 	return (
 		<div className='header__search-block'>
 			<svg
@@ -39,14 +65,15 @@ export const Search = ({ searchValue, setSearchValue }) => {
 				></line>
 			</svg>
 			<input
-				value={searchValue}
-				onChange={(e) => setSearchValue(e.target.value)}
+				ref={inputRef}
+				value={value}
+				onChange={onChangeInput}
 				className='header__search'
 				placeholder='Поиск образа...'
 			/>
-			{searchValue && (
+			{value && (
 				<svg
-					onClick={() => setSearchValue('')}
+					onClick={onClickClearInput}
 					className='header__close-icon'
 					viewBox='0 0 20 20'
 					xmlns='http://www.w3.org/2000/svg'

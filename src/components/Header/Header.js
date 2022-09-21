@@ -1,9 +1,8 @@
 import React from 'react';
-import { Sort } from '../Sort/Sort';
-// import { Search } from '../Search/Search';
+import { Search } from '../Search/Search';
 import './Header.css';
 
-export const Header = ({ searchValue, setSearchValue }) => {
+export const Header = () => {
 	return (
 		<div className='header'>
 			<div className='header__logo'>
@@ -19,7 +18,7 @@ export const Header = ({ searchValue, setSearchValue }) => {
 					<div className='header__subtitle'>для проведения мероприятий</div>
 				</div>
 			</div>
-			{/* <Search searchValue={searchValue} setSearchValue={setSearchValue} /> */}
+			{/* <Search /> */}
 		</div>
 	);
 };

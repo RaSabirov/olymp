@@ -1,4 +1,5 @@
 import React from 'react';
+import { SearchContext } from '../../contexts/SearchContext';
 import { Header } from '../Header/Header';
 import { Items } from '../Items/Items';
 import { Popup } from '../Popup/Popup';
@@ -18,17 +19,23 @@ function App() {
 
 	return (
 		<div className='wrapper'>
-			<div className='container'>
-				<Header searchValue={searchValue} setSearchValue={setSearchValue} />
-				<div className='content'>
-					<Items onProgramsClick={handleProgramsClick} searchValue={searchValue} onClose={handleClosePopup} />
+			<SearchContext.Provider value={{ searchValue, setSearchValue }}>
+				<div className='container'>
+					<Header />
+					<div className='content'>
+						<Items
+							onProgramsClick={handleProgramsClick}
+							searchValue={searchValue}
+							onClose={handleClosePopup}
+						/>
+					</div>
 				</div>
-			</div>
-			<Popup
-				onClose={handleClosePopup}
-				isOpen={!!selectedCard.title && !!selectedCard.programs}
-				card={selectedCard}
-			/>
+				<Popup
+					onClose={handleClosePopup}
+					isOpen={!!selectedCard.title && !!selectedCard.programs}
+					card={selectedCard}
+				/>
+			</SearchContext.Provider>
 		</div>
 	);
 }
